@@ -1,0 +1,9 @@
+{
+  "author": "Lillie",
+  "description": [
+    "A demo plugin written for the BSIPA basic tutorial."
+  ],
+  "id": "BeatSaberQuestPatch",
+  "name": "BeatSaberQuestPatch",
+  "version": "0.0.1"
+}

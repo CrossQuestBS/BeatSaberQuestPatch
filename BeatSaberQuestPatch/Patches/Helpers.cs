@@ -7,13 +7,13 @@ namespace BeatSaberQuestPatch.Patches
     public class HelpersPatch : ICrossPatch
     {
         [CrossPrefix]
-        [CrossPatch(typeof(DisableOnNonQuest), "Awake", new Type[0])]
+        [CrossPatch(typeof(DisableOnNonQuest), "Awake")]
         public static bool DisableOnNonQuest_Awake() {
             return false;
         }
 
         [CrossPrefix]
-        [CrossPatch(typeof(IPAPluginsDirDeleter), "Awake", new Type[0])]
+        [CrossPatch(typeof(IPAPluginsDirDeleter), "Awake")]
         public static bool IPAPluginsDirDeleter_Awake()
         {
             return false;

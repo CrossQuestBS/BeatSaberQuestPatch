@@ -8,7 +8,7 @@ namespace BeatSaberQuestPatch.Patches
     public class FileSystemStoragePatch : ICrossPatch
     {
         [CrossPostfix]
-        [CrossPatch(typeof(FileSystemFileStorage), ".ctor", new Type[0])]
+        [CrossPatch(typeof(FileSystemFileStorage), ".ctor")]
         public static void FileSystemFileStorage_Ctor(FileSystemFileStorage _instance)
         {
             typeof(FileSystemFileStorage).SetPrivateField(_instance, "_persistentDataPath", "/sdcard/CrossQuest/com.beatgames.beatsaber/files");

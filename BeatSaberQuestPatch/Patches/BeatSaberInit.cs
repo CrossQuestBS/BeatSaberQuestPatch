@@ -7,7 +7,7 @@ namespace BeatSaberQuestPatch.Patches
     public class BeatSaberInitPatch : ICrossPatch
     {  
         [CrossPrefix]
-        [CrossPatch(typeof(BeatSaberInit), "get_settingsApplicator", new Type[0])]
+        [CrossPatch(typeof(BeatSaberInit), "get_settingsApplicator")]
         public static bool SettingsApplicator(BeatSaberInit _instance, ref SettingsApplicatorSO __result)
         {
             __result = _instance._questSettingsApplicator;

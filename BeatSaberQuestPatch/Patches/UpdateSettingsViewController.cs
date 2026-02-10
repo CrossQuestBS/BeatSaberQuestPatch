@@ -7,7 +7,7 @@ namespace BeatSaberQuestPatch.Patches
     public class UpdateSettingsViewController : ICrossPatch
     {
         [CrossPrefix]
-        [CrossPatch(typeof(MainSettingsMenuViewControllersInstaller), "InstallBindings", new Type[0])]
+        [CrossPatch(typeof(MainSettingsMenuViewControllersInstaller), "InstallBindings")]
         public static bool InstallBindings(MainSettingsMenuViewControllersInstaller _instance)
         {
             _instance._oculusPCSettingsMenuViewController = _instance._questSettingsMenuViewController;
@@ -15,7 +15,7 @@ namespace BeatSaberQuestPatch.Patches
         }
         
         [CrossPostfix]
-        [CrossPatch(typeof(QuestSettingsApplicatorSO), "ApplyGraphicSettings", new Type[0])]
+        [CrossPatch(typeof(QuestSettingsApplicatorSO), "ApplyGraphicSettings")]
         public static void ApplyGraphicSettings(QuestSettingsApplicatorSO __instance, in BeatSaber.Settings.Settings settings)
         {
             OVRPlugin.suggestedCpuPerfLevel = (OVRPlugin.ProcessorPerformanceLevel)settings.quest.cpuLevel - 1;
