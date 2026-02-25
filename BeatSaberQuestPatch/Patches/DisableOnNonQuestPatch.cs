@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using CrossAccord.Common.Attributes;
 
@@ -8,13 +9,12 @@ namespace BeatSaberQuestPatch.Patches;
 [AccordPrefix]
 public partial class DisableOnNonQuestPatch : IDisposable
 {
-
     public DisableOnNonQuestPatch()
     {
         Patch();
     }
     
-    public MethodInfo Method { get; } = typeof(DisableOnNonQuest).GetMethod("Awake", (global::System.Reflection.BindingFlags)~0)!;
+    public MethodInfo Method { get; } 
     public bool Prefix(DisableOnNonQuest instance)
     {
         return false;
@@ -24,4 +24,6 @@ public partial class DisableOnNonQuestPatch : IDisposable
     {
         Unpatch();
     }
+
+    public MemberInfo MemberMethod { get; } = typeof(DisableOnNonQuest).GetMember("Awake", (global::System.Reflection.BindingFlags)~0).FirstOrDefault();
 }

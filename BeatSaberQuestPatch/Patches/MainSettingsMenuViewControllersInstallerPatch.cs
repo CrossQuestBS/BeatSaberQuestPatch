@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using CrossAccord.Common.Attributes;
 
@@ -14,7 +15,6 @@ public partial class MainSettingsMenuViewControllersInstallerPatch : IDisposable
         Patch();
     }
     
-    public MethodInfo Method { get; } = typeof(MainSettingsMenuViewControllersInstaller).GetMethod("InstallBindings", (global::System.Reflection.BindingFlags)~0)!;
     public bool Prefix(MainSettingsMenuViewControllersInstaller instance)
     {
         instance._oculusPCSettingsMenuViewController = instance._questSettingsMenuViewController;
@@ -25,4 +25,6 @@ public partial class MainSettingsMenuViewControllersInstallerPatch : IDisposable
     {
         Unpatch();
     }
+
+    public MemberInfo MemberMethod { get; } = typeof(MainSettingsMenuViewControllersInstaller).GetMember("InstallBindings", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
 }

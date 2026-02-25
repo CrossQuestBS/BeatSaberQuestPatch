@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using CrossAccord.Common.Attributes;
 
@@ -13,7 +14,6 @@ namespace BeatSaberQuestPatch.Patches
             Patch();
         }
         
-        public MethodInfo Method { get; } = typeof(HardwareCategories).GetMethod("GetHardwareCategory", (global::System.Reflection.BindingFlags)~0)!;
         public bool Prefix(ref HardwareCategory returnValue)
         {
             int headsetType = (int)OVRPlugin.GetSystemHeadsetType() - 8;
@@ -27,5 +27,7 @@ namespace BeatSaberQuestPatch.Patches
         {
             Unpatch();
         }
+        
+        public MemberInfo MemberMethod { get; } = typeof(HardwareCategories).GetMember("GetHardwareCategory", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using CrossAccord.Common.Attributes;
 
@@ -13,7 +14,6 @@ namespace BeatSaberQuestPatch.Patches
             Patch();
         }
         
-        public MethodInfo Method { get; } = typeof(FileSystemFileStorage).GetMethod(".ctor", (global::System.Reflection.BindingFlags)~0)!;
         public void Postfix(FileSystemFileStorage instance)
         {
             typeof(FileSystemFileStorage).SetPrivateField(instance, "_persistentDataPath", "/sdcard/CrossQuest/com.beatgames.beatsaber/files");
@@ -23,5 +23,7 @@ namespace BeatSaberQuestPatch.Patches
         {
             Unpatch();
         }
+
+        public MemberInfo MemberMethod { get; } = typeof(FileSystemFileStorage).GetMember(".ctor", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
     }
 }

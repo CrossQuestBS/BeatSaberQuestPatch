@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using CrossAccord.Common.Attributes;
 
@@ -13,9 +14,6 @@ namespace BeatSaberQuestPatch.Patches
             Patch();   
         }
         
-        public MethodInfo Method { get; } =
-            typeof(BeatSaberInit).GetMethod("get_settingsApplicator", (global::System.Reflection.BindingFlags)~0)!;
-        
         public bool Prefix(BeatSaberInit instance, ref SettingsApplicatorSO returnValue)
         {
             returnValue = instance._questSettingsApplicator;
@@ -26,5 +24,7 @@ namespace BeatSaberQuestPatch.Patches
         {
             Unpatch();
         }
+
+        public MemberInfo MemberMethod { get; } = typeof(BeatSaberInit).GetMember("get_settingsApplicator", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
     }
 }

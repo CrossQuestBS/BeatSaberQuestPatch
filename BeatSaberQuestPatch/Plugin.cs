@@ -17,7 +17,6 @@ public class Plugin
     [Init]
     public Plugin(Logger logger)
     {
-        var instance = RuntimeManager.Instance;
         log = logger;
         log.Notice("Basic plugin running!");
         _patches = [
