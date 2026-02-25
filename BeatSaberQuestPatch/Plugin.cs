@@ -26,6 +26,8 @@ public class Plugin
             new FileSystemStoragePatch(),
             new HardwareCategoriesPatch(),
             new MainSettingsMenuViewControllersInstallerPatch(),
+            new QuestSettingsApplicatorSoPatch(),
+            new QuestGraphicSettingsViewControllerPatch()
         ];
     }
 
