@@ -7,9 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="CrossPatcher">
-        <HintPath>..\..\..\..\..\..\Library\Application Support\CrossQuestBS\Instances\ff16b761-6f3c-433a-ac38-79354ef67f7f\UnityProject_1.42.0\Assets\Plugins\Libs\CrossPatcher.dll</HintPath>
+      <Reference Include="CrossAccord">
+        <HintPath>..\..\CrossAccord\CrossAccord\bin\Release\netstandard2.1\CrossAccord.dll</HintPath>
       </Reference>
+      <Reference Include="CrossAccord.Common">
+        <HintPath>..\..\CrossAccord\CrossAccord.Common\bin\Release\netstandard2.1\CrossAccord.Common.dll</HintPath>
+      </Reference>
+      <Analyzer Include="..\..\CrossAccord\CrossAccord.Generator\CrossAccord.Generator\bin\Release\netstandard2.0\CrossAccord.Generator.dll" />
       <Reference Include="IPA.Loader">
         <HintPath>..\..\..\..\..\..\Library\Application Support\CrossQuestBS\Instances\ff16b761-6f3c-433a-ac38-79354ef67f7f\UnityProject_1.42.0\Assets\Plugins\Libs\IPA.Loader.dll</HintPath>
       </Reference>
@@ -18,14 +22,13 @@
       <Reference Include="BGLib.FileStorage" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.FileStorage.dll"/>
       <Reference Include="GameInit" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameInit.dll" Publicize="true"/>
       <Reference Include="BeatSaber.Settings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.Settings.dll"/>
-      <Reference Include="Rendering" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Rendering.dll"/>
-      <Reference Include="Helpers" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Helpers.dll"/>
+      <Reference Include="Rendering" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Rendering.dll" Publicize="true"/>
+      <Reference Include="GameplayCore" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameplayCore.dll" Publicize="true"/>
+      <Reference Include="Helpers" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Helpers.dll" Publicize="true"/>
       <Reference Include="Oculus.Platform" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Oculus.Platform.dll"/>
       <Reference Include="Oculus.VR" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Oculus.VR.dll"/>
       <Reference Include="UnityEngine.UI" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.UI.dll" />
       <Reference Include="UnityEngine.CoreModule" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.CoreModule.dll" />
-
-
     </ItemGroup>
 
     <ItemGroup>

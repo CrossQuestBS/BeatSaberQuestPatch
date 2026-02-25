@@ -1,18 +1,30 @@
 using System;
-using CrossPatcher.Attributes;
-using CrossPatcher.Interfaces;
+using System.Reflection;
+using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches
 {
-    public class DisableEditorButton : ICrossPatch
-    {  
-        [CrossPostfix]
-        [CrossPatch(typeof(MainMenuViewController), "DidActivate")]
-        public static void DisableButton(MainMenuViewController _instance)
+    [AccordPatch(typeof(MainMenuViewController), "DidActivate")]
+    [AccordPostfix]
+    public partial class DisableEditorButton : IDisposable
+    {
+
+        public DisableEditorButton()
         {
-            if (_instance._beatmapEditorButton == null) return;
-            var instance = _instance._beatmapEditorButton.gameObject;
-            instance.SetActive(false);
+            Patch();
+        }
+        
+        public MethodInfo Method { get; } = typeof(MainMenuViewController).GetMethod("DidActivate", (global::System.Reflection.BindingFlags)~0)!;
+        public void Postfix(MainMenuViewController instance, ref bool arg1, ref bool arg2, ref bool arg3)
+        {
+            if (instance._beatmapEditorButton == null) return;
+            var button = instance._beatmapEditorButton.gameObject;
+            button.SetActive(false);
+        }
+
+        public void Dispose()
+        {
+            Unpatch();
         }
     }
 }

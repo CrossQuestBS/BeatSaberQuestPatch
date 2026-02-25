@@ -1,17 +1,30 @@
 using System;
-using CrossPatcher.Attributes;
-using CrossPatcher.Interfaces;
+using System.Reflection;
+using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches
 {
-    public class BeatSaberInitPatch : ICrossPatch
-    {  
-        [CrossPrefix]
-        [CrossPatch(typeof(BeatSaberInit), "get_settingsApplicator")]
-        public static bool SettingsApplicator(BeatSaberInit _instance, ref SettingsApplicatorSO __result)
+    [AccordPatch(typeof(BeatSaberInit), "get_settingsApplicator")]
+    [AccordPrefix]
+    public partial class BeatSaberInitPatch : IDisposable
+    {
+        public BeatSaberInitPatch()
         {
-            __result = _instance._questSettingsApplicator;
+            Patch();   
+        }
+        
+        public MethodInfo Method { get; } =
+            typeof(BeatSaberInit).GetMethod("get_settingsApplicator", (global::System.Reflection.BindingFlags)~0)!;
+        
+        public bool Prefix(BeatSaberInit instance, ref SettingsApplicatorSO returnValue)
+        {
+            returnValue = instance._questSettingsApplicator;
             return false;
+        }
+
+        public void Dispose()
+        {
+            Unpatch();
         }
     }
 }

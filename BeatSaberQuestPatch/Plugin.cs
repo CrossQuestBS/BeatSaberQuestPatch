@@ -1,3 +1,6 @@
+using System;
+using BeatSaberQuestPatch.Patches;
+using CrossAccord;
 using IPA;
 using IPA.Logging;
 using IPA.PluginInterfaces;
@@ -9,11 +12,22 @@ public class Plugin
 {
     public static Logger log { get; private set; }
 
+    private CrossAccord.Common.Interfaces.IAccordPatch[] _patches;
+
     [Init]
     public Plugin(Logger logger)
     {
+        var instance = RuntimeManager.Instance;
         log = logger;
         log.Notice("Basic plugin running!");
+        _patches = [
+            new BeatSaberInitPatch(), 
+            new DisableEditorButton(),
+            new DisableOnNonQuestPatch(),
+            new FileSystemStoragePatch(),
+            new HardwareCategoriesPatch(),
+            new MainSettingsMenuViewControllersInstallerPatch(),
+        ];
     }
 
     [OnStart]
@@ -26,6 +40,13 @@ public class Plugin
     [OnExit]
     public void OnExit()
     {
+        foreach (var accordPatch in _patches)
+        {
+            if (accordPatch is IDisposable disposable)
+            {
+                disposable.Dispose();
+            }
+        }
         log.Notice("Basic plugin EXIT!");
         // teardown
     }

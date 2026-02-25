@@ -1,17 +1,27 @@
 using System;
-using CrossPatcher.Attributes;
-using CrossPatcher.Extensions;
-using CrossPatcher.Interfaces;
+using System.Reflection;
+using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches
 {
-    public class FileSystemStoragePatch : ICrossPatch
+    [AccordPatch(typeof(FileSystemFileStorage), ".ctor")]
+    [AccordPostfix]
+    public partial class FileSystemStoragePatch : IDisposable
     {
-        [CrossPostfix]
-        [CrossPatch(typeof(FileSystemFileStorage), ".ctor")]
-        public static void FileSystemFileStorage_Ctor(FileSystemFileStorage _instance)
+        public FileSystemStoragePatch()
         {
-            typeof(FileSystemFileStorage).SetPrivateField(_instance, "_persistentDataPath", "/sdcard/CrossQuest/com.beatgames.beatsaber/files");
+            Patch();
+        }
+        
+        public MethodInfo Method { get; } = typeof(FileSystemFileStorage).GetMethod(".ctor", (global::System.Reflection.BindingFlags)~0)!;
+        public void Postfix(FileSystemFileStorage instance)
+        {
+            typeof(FileSystemFileStorage).SetPrivateField(instance, "_persistentDataPath", "/sdcard/CrossQuest/com.beatgames.beatsaber/files");
+        }
+
+        public void Dispose()
+        {
+            Unpatch();
         }
     }
 }
