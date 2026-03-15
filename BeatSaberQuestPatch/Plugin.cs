@@ -27,7 +27,12 @@ public class Plugin
             new HardwareCategoriesPatch(),
             new MainSettingsMenuViewControllersInstallerPatch(),
             new QuestSettingsApplicatorSoPatch(),
-            new QuestGraphicSettingsViewControllerPatch()
+            new QuestGraphicSettingsViewControllerPatch(),
+            new EnableCustomSongsPatch(),
+            new PatchCustomSongs(),
+            new MainEffectPatch(),
+            new GraphicsPatch(),
+            new SettingsPatch()
         ];
     }
 
