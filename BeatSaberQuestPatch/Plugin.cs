@@ -30,9 +30,6 @@ public class Plugin
             new QuestGraphicSettingsViewControllerPatch(),
             new EnableCustomSongsPatch(),
             new PatchCustomSongs(),
-            new MainEffectPatch(),
-            new GraphicsPatch(),
-            new SettingsPatch()
         ];
     }
 
