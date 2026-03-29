@@ -1,5 +1,6 @@
 using System;
 using BeatSaberQuestPatch.Patches;
+using BeatSaberQuestPatch.Patches.Trampoline;
 using CrossAccord;
 using IPA;
 using IPA.Logging;
@@ -20,7 +21,6 @@ public class Plugin
         log = logger;
         log.Notice("Basic plugin running!");
         _patches = [
-            new BeatSaberInitPatch(), 
             new DisableEditorButton(),
             new DisableOnNonQuestPatch(),
             new FileSystemStoragePatch(),
@@ -30,7 +30,12 @@ public class Plugin
             new QuestGraphicSettingsViewControllerPatch(),
             new EnableCustomSongsPatch(),
             new PatchCustomSongs(),
+            new GraphicsPatch(),
+            new MainEffectPatch(),
+            new SettingsPatch()
         ];
+
+        BeatSaberInitTrampoline.Instance = new BeatSaberInitTrampoline();
     }
 
     [OnStart]

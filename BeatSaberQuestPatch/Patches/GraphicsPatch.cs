@@ -7,7 +7,7 @@ using QualitySettings = BeatSaber.Settings.QualitySettings;
 
 namespace BeatSaberQuestPatch.Patches;
 
-/*[AccordPatch(typeof(PyramidBloomMainEffectSO), "PreRender")]
+[AccordPatch(typeof(PyramidBloomMainEffectSO), "PreRender")]
 [AccordPrefix]
 public partial class GraphicsPatch
 {
@@ -69,14 +69,12 @@ public partial class SettingsPatch
     {
         arg1.quality.mainEffect = QualitySettings.MainEffectOption.Game;
         arg1.quality.bloom = QualitySettings.BloomQuality.Game;
-        arg1.quality.smokeGraphics = true;
+        arg1.quality.smokeGraphics = false;
         arg1.quality.mirror = QualitySettings.MirrorQuality.Off;
         arg1.quality.obstacles = QualitySettings.ObstacleQuality.Low;
         arg1.quality.antiAliasingLevel = 4;
         arg1.quality.vrResolutionScale = 1.0f;
         arg1.quality.screenDisplacementEffects = false;
         arg1.quality.maxShockwaveParticles = 0;
-        arg1.quality.targetFramerate = -1;
-        arg1.quality.maxQueuedFrames = -1;
     }
-}*/
+}
