@@ -5,7 +5,7 @@ using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches;
 
-[AccordPatch(typeof(DisableOnNonQuest),"Awake")]
+[AccordPatch(typeof(DisableOnNonQuest),"Awake", [])]
 [AccordPrefix]
 public partial class DisableOnNonQuestPatch : IDisposable
 {
@@ -14,7 +14,6 @@ public partial class DisableOnNonQuestPatch : IDisposable
         Patch();
     }
     
-    public MethodInfo Method { get; } 
     public bool Prefix(DisableOnNonQuest instance)
     {
         return false;
@@ -25,5 +24,4 @@ public partial class DisableOnNonQuestPatch : IDisposable
         Unpatch();
     }
 
-    public MemberInfo MemberMethod { get; } = typeof(DisableOnNonQuest).GetMember("Awake", (global::System.Reflection.BindingFlags)~0).FirstOrDefault();
 }

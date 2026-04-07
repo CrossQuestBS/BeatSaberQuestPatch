@@ -5,7 +5,7 @@ using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches
 {
-    [AccordPatch(typeof(HardwareCategories), "GetHardwareCategory")]
+    [AccordPatch(typeof(HardwareCategories), "GetHardwareCategory", [])]
     [AccordPrefix]
     public partial class HardwareCategoriesPatch : IDisposable
     {
@@ -27,7 +27,5 @@ namespace BeatSaberQuestPatch.Patches
         {
             Unpatch();
         }
-        
-        public MemberInfo MemberMethod { get; } = typeof(HardwareCategories).GetMember("GetHardwareCategory", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
     }
 }

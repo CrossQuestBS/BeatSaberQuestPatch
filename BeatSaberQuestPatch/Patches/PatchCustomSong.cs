@@ -5,7 +5,7 @@ using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches;
 
-[AccordPatch(typeof(FileSystemCustomLevelProvider), ".ctor")]
+[AccordPatch(typeof(FileSystemCustomLevelProvider), ".ctor", [])]
 [AccordPostfix]
 public partial class PatchCustomSongs
 {
@@ -14,7 +14,6 @@ public partial class PatchCustomSongs
         Patch();
     }
     
-    public MemberInfo MemberMethod => typeof(FileSystemCustomLevelProvider).GetMember(".ctor", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
     public void Postfix(FileSystemCustomLevelProvider instance)
     {
         var path = "/sdcard/CrossQuest/com.beatgames.beatsaber";

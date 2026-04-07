@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace BeatSaberQuestPatch.Patches;
 
-[AccordPatch(typeof(QuestSettingsApplicatorSO), "ApplyGraphicSettings")]
+[AccordPatch(typeof(QuestSettingsApplicatorSO), "ApplyGraphicSettings", [typeof(Settings), typeof(SceneType)])]
 public partial class QuestSettingsApplicatorSoPatch : IDisposable
 {
 
@@ -16,9 +16,7 @@ public partial class QuestSettingsApplicatorSoPatch : IDisposable
         Patch();
     }
     
-    public MemberInfo MemberMethod { get; } = typeof(QuestSettingsApplicatorSO)
-        .GetMember("ApplyGraphicSettings", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
-    public void Postfix(QuestSettingsApplicatorSO instance, in Settings settings, ref SceneType arg2)
+    public void Postfix(QuestSettingsApplicatorSO instance, ref Settings settings, ref SceneType arg2)
     {
         OVRPlugin.suggestedCpuPerfLevel = (OVRPlugin.ProcessorPerformanceLevel)SettingPresets.kQuest3.quest.cpuLevel - 1;
         OVRPlugin.suggestedGpuPerfLevel = (OVRPlugin.ProcessorPerformanceLevel)SettingPresets.kQuest3.quest.gpuLevel - 1;

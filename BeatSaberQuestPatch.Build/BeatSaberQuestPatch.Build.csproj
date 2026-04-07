@@ -16,13 +16,17 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Mono.Cecil" Version="0.11.6" />
         <Reference Include="BGLib.FileStorage" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.FileStorage.dll"/>
+        <Reference Include="Main" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll" Publicize="true" />
 
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\BeatSaberQuestPatch\BeatSaberQuestPatch.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AsmResolver.DotNet" Version="6.0.0-rc.1" />
     </ItemGroup>
 
 </Project>

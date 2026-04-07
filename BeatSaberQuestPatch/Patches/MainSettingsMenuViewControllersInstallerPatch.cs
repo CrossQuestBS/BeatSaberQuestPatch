@@ -5,7 +5,7 @@ using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches;
 
-[AccordPatch(typeof(MainSettingsMenuViewControllersInstaller), "InstallBindings")]
+[AccordPatch(typeof(MainSettingsMenuViewControllersInstaller), "InstallBindings", [])]
 [AccordPrefix]
 public partial class MainSettingsMenuViewControllersInstallerPatch : IDisposable
 {
@@ -25,6 +25,4 @@ public partial class MainSettingsMenuViewControllersInstallerPatch : IDisposable
     {
         Unpatch();
     }
-
-    public MemberInfo MemberMethod { get; } = typeof(MainSettingsMenuViewControllersInstaller).GetMember("InstallBindings", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
 }

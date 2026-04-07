@@ -5,7 +5,7 @@ using CrossAccord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches
 {
-    [AccordPatch(typeof(FileSystemFileStorage), ".ctor")]
+    [AccordPatch(typeof(FileSystemFileStorage), ".ctor", [])]
     [AccordPostfix]
     public partial class FileSystemStoragePatch : IDisposable
     {
@@ -23,7 +23,5 @@ namespace BeatSaberQuestPatch.Patches
         {
             Unpatch();
         }
-
-        public MemberInfo MemberMethod { get; } = typeof(FileSystemFileStorage).GetMember(".ctor", (global::System.Reflection.BindingFlags)~0).FirstOrDefault()!;
     }
 }
