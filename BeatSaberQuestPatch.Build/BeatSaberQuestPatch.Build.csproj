@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="CrossAccord.ILTrampoline">
-        <HintPath>..\..\CrossAccord\CrossAccord.ILTrampoline\bin\Release\netstandard2.1\CrossAccord.ILTrampoline.dll</HintPath>
+      <Reference Include="Accord.ILTrampoline">
+        <HintPath>..\..\Accord\Accord.ILTrampoline\bin\Release\netstandard2.1\Accord.ILTrampoline.dll</HintPath>
       </Reference>
       <Reference Include="GameInit">
         <HintPath>..\BeatSaberQuestPatch\obj\Release\netstandard2.1\publicized\GameInit.dll</HintPath>

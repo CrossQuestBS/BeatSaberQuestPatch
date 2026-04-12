@@ -1,7 +1,7 @@
 using System;
 using BeatSaberQuestPatch.Patches;
 using BeatSaberQuestPatch.Patches.Trampoline;
-using CrossAccord;
+using Accord.Common.Interfaces;
 using IPA;
 using IPA.Logging;
 using IPA.PluginInterfaces;
@@ -13,7 +13,7 @@ public class Plugin
 {
     public static Logger log { get; private set; }
 
-    private CrossAccord.Common.Interfaces.IAccordPatch[] _patches;
+    private IAccordPatch[] _patches;
 
     [Init]
     public Plugin(Logger logger)

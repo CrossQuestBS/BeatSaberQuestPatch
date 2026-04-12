@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using BeatSaber.Settings;
-using CrossAccord.Common.Attributes;
+using Accord.Common.Attributes;
 using UnityEngine;
 
 namespace BeatSaberQuestPatch.Patches;

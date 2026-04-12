@@ -7,13 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="CrossAccord">
-        <HintPath>..\..\CrossAccord\CrossAccord\bin\Release\netstandard2.1\CrossAccord.dll</HintPath>
+      <Reference Include="Accord">
+        <HintPath>..\..\Accord\Accord\bin\Release\netstandard2.1\Accord.dll</HintPath>
       </Reference>
-      <Reference Include="CrossAccord.Common">
-        <HintPath>..\..\CrossAccord\CrossAccord.Common\bin\Release\netstandard2.1\CrossAccord.Common.dll</HintPath>
+      <Reference Include="Accord.Common">
+        <HintPath>..\..\Accord\Accord.Common\bin\Release\netstandard2.1\Accord.Common.dll</HintPath>
       </Reference>
-      <Analyzer Include="..\..\CrossAccord\CrossAccord.Generator\CrossAccord.Generator\bin\Release\netstandard2.0\CrossAccord.Generator.dll" />
+      <Analyzer Include="..\..\Accord\Accord.Generator\bin\Release\netstandard2.0\Accord.Generator.dll" />
       <Reference Include="IPA.Loader">
         <HintPath>Dependencies\IPA.Loader.dll</HintPath>
       </Reference>

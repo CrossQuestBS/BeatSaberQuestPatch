@@ -1,5 +1,5 @@
 using System;
-using CrossAccord.Common.Attributes;
+using Accord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches
 {

@@ -1,4 +1,4 @@
-using CrossAccord.Common.Interfaces;
+using Accord.Common.Interfaces;
 
 namespace BeatSaberQuestPatch.Patches.Trampoline;
 

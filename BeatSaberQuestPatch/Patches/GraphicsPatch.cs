@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Reflection;
 using BeatSaber.Settings;
-using CrossAccord.Common.Attributes;
+using Accord.Common.Attributes;
 using UnityEngine;
 using QualitySettings = BeatSaber.Settings.QualitySettings;
 

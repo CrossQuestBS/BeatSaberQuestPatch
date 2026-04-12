@@ -5,8 +5,8 @@ using AsmResolver.DotNet;
 using AsmResolver.DotNet.Code.Cil;
 using AsmResolver.PE.DotNet.Cil;
 using BeatSaberQuestPatch.Patches.Trampoline;
-using CrossAccord.ILTrampoline.Attributes;
-using CrossAccord.ILTrampoline.Interfaces;
+using Accord.ILTrampoline.Attributes;
+using Accord.ILTrampoline.Interfaces;
 
 namespace BeatSaberQuestPatch.Build;
 
