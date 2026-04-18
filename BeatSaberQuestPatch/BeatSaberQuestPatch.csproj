@@ -8,16 +8,17 @@
 
     <ItemGroup>
       <Reference Include="Accord">
-        <HintPath>..\..\Accord\Accord\bin\Release\netstandard2.1\Accord.dll</HintPath>
+        <HintPath>..\Dependencies\Accord.dll</HintPath>
       </Reference>
       <Reference Include="Accord.Common">
-        <HintPath>..\..\Accord\Accord.Common\bin\Release\netstandard2.1\Accord.Common.dll</HintPath>
+        <HintPath>..\Dependencies\Accord.Common.dll</HintPath>
       </Reference>
-      <Analyzer Include="..\..\Accord\Accord.Generator\bin\Release\netstandard2.0\Accord.Generator.dll" />
+      <Analyzer Include="..\Dependencies\Generator\Accord.Generator.dll" />
       <Reference Include="IPA.Loader">
-        <HintPath>Dependencies\IPA.Loader.dll</HintPath>
+        <HintPath>..\Dependencies\IPA.Loader.dll</HintPath>
       </Reference>
-      <Reference Include="Main" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll" Publicize="true" />
+        <Analyzer Include="..\Dependencies\Generator\IPA.Config.Generator.dll" />
+        <Reference Include="Main" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll" Publicize="true" />
       <Reference Include="BeatSaber.GameSettings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.GameSettings.dll"/>
       <Reference Include="BGLib.FileStorage" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.FileStorage.dll"/>
       <Reference Include="GameInit" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameInit.dll" Publicize="true"/>

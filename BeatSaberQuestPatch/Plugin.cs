@@ -3,6 +3,8 @@ using BeatSaberQuestPatch.Patches;
 using BeatSaberQuestPatch.Patches.Trampoline;
 using Accord.Common.Interfaces;
 using IPA;
+using IPA.Config;
+using IPA.Config.Stores;
 using IPA.Logging;
 using IPA.PluginInterfaces;
 
@@ -16,10 +18,12 @@ public class Plugin
     private IAccordPatch[] _patches;
 
     [Init]
-    public Plugin(Logger logger)
+    public Plugin(Logger logger, Config config)
     {
         log = logger;
-        log.Notice("Basic plugin running!");
+        PluginConfig.Instance = config.Generated<PluginConfigImpl>();
+        log.Notice($"Was able to do stuff!: {PluginConfig.Instance.Example}");
+        log.Notice($"Basic plugin running with config value");
         _patches = [
             new DisableEditorButton(),
             new DisableOnNonQuestPatch(),
