@@ -1,7 +1,11 @@
+using System;
 using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using BeatSaber.Settings;
 using Accord.Common.Attributes;
+using OculusStudios.Platform.Oculus;
 using UnityEngine;
 using QualitySettings = BeatSaber.Settings.QualitySettings;
 
@@ -51,6 +55,24 @@ public partial class MainEffectPatch
     }
 }
 
+[AccordPatch(typeof(PlatformUser), "InternalGetAccessTokenAsync", [])]
+[AccordPrefix]
+public partial class StopTryingGettingToken
+{
+    public StopTryingGettingToken()
+    {
+        Patch();
+    }
+
+    public bool Prefix(PlatformUser instance, ref Task returnValue)
+    {
+        returnValue = Task.CompletedTask;
+        return false;
+    }
+}
+
+
+
 [AccordPatch(typeof(SettingValidations), "AdjustQuest3", [typeof(Settings)])]
 public partial class SettingsPatch
 {
@@ -61,13 +83,21 @@ public partial class SettingsPatch
 
     public void Postfix(ref Settings arg1)
     {
-        arg1.quality.mainEffect = QualitySettings.MainEffectOption.Game;
-        arg1.quality.bloom = QualitySettings.BloomQuality.Game;
-        arg1.quality.smokeGraphics = true;
-        arg1.quality.mirror = QualitySettings.MirrorQuality.Off;
-        arg1.quality.obstacles = QualitySettings.ObstacleQuality.High;
-        arg1.quality.antiAliasingLevel = 0;
-        arg1.quality.screenDisplacementEffects = true;
-        arg1.quality.maxShockwaveParticles = 0;
+        ref QualitySettings settings = ref arg1.quality;
+        
+        settings.mainEffect = QualitySettings.MainEffectOption.Game;
+        settings.bloom = QualitySettings.BloomQuality.Game;
+        settings.smokeGraphics = false;
+        settings.mirror = QualitySettings.MirrorQuality.Off;
+        settings.obstacles = QualitySettings.ObstacleQuality.Medium;
+        settings.antiAliasingLevel = 0;
+        settings.screenDisplacementEffects = false;
+        settings.maxShockwaveParticles = 0;
+        settings.targetFramerate = 240;
+        
+        ref QuestSettings quest = ref arg1.quest;
+        quest.foveatedRenderingGameplay = QuestSettings.FoveatedRenderingLevel.Medium;
+        quest.dynamicFoveatedRendering = true;
+
     }
 }

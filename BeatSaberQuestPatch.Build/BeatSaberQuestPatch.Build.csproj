@@ -7,17 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="Accord.ILTrampoline">
-        <HintPath>..\..\Accord\Accord.ILTrampoline\bin\Release\netstandard2.1\Accord.ILTrampoline.dll</HintPath>
-      </Reference>
-      <Reference Include="GameInit">
-        <HintPath>..\BeatSaberQuestPatch\obj\Release\netstandard2.1\publicized\GameInit.dll</HintPath>
+      <Reference Include="Accord.Transpiler">
+        <HintPath>..\Dependencies\Accord.Transpiler.dll</HintPath>
       </Reference>
     </ItemGroup>
 
     <ItemGroup>
         <Reference Include="BGLib.FileStorage" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.FileStorage.dll"/>
         <Reference Include="Main" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll" Publicize="true" />
+        <Reference Include="GameInit" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameInit.dll" Publicize="true" />
 
     </ItemGroup>
 
@@ -27,6 +25,10 @@
 
     <ItemGroup>
       <PackageReference Include="AsmResolver.DotNet" Version="6.0.0-rc.1" />
+      <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

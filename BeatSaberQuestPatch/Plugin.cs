@@ -30,16 +30,17 @@ public class Plugin
             new FileSystemStoragePatch(),
             new HardwareCategoriesPatch(),
             new MainSettingsMenuViewControllersInstallerPatch(),
-            new QuestSettingsApplicatorSoPatch(),
+            new SettingsApplicatorSoPatch(),
             new QuestGraphicSettingsViewControllerPatch(),
             new EnableCustomSongsPatch(),
             new PatchCustomSongs(),
+            new SettingsPatch(),
+            new StopTryingGettingToken(),
             new GraphicsPatch(),
-            new MainEffectPatch(),
-            new SettingsPatch()
+            new MainEffectPatch()
         ];
 
-        BeatSaberInitTrampoline.Instance = new BeatSaberInitTrampoline();
+        BeatSaberInitTranspilerInstance.Instance = new BeatSaberInitTranspilerInstance();
     }
 
     [OnStart]

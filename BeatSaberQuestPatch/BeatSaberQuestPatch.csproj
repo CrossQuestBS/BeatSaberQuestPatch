@@ -19,9 +19,12 @@
       </Reference>
         <Analyzer Include="..\Dependencies\Generator\IPA.Config.Generator.dll" />
         <Reference Include="Main" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll" Publicize="true" />
-      <Reference Include="BeatSaber.GameSettings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.GameSettings.dll"/>
+        <Reference Include="BeatSaber.GameSettings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.GameSettings.dll"/>
+        <Reference Include="OculusStudios.Platform.Core" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\OculusStudios.Platform.Core.dll"/>
+        <Reference Include="OculusStudios.Platform.Oculus" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\OculusStudios.Platform.Oculus.dll"  Publicize="true"/>
       <Reference Include="BGLib.FileStorage" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.FileStorage.dll"/>
-      <Reference Include="GameInit" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameInit.dll" Publicize="true"/>
+        <Reference Include="BGLib.UnityExtension" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.UnityExtension.dll"/>
+        <Reference Include="GameInit" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameInit.dll" Publicize="true"/>
       <Reference Include="BeatSaber.Settings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.Settings.dll"/>
       <Reference Include="Rendering" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Rendering.dll" Publicize="true"/>
       <Reference Include="GameplayCore" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameplayCore.dll" Publicize="true"/>
