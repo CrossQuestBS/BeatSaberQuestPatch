@@ -62,7 +62,7 @@ public class Plugin
                 disposable.Dispose();
             }
         }
-        log.Notice("Basic plugin EXIT!");
+        log.Notice("Basic plugin Exit!");
         // teardown
     }
 }
