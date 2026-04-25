@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace BeatSaberQuestPatch.Patches;
 
+/// <summary>
+/// The following patch make sure correct performance level is set on Quest, and display resolution
+/// </summary>
 [AccordPatch(typeof(SettingsApplicatorSO), "ApplyGraphicSettings", [typeof(Settings), typeof(SceneType)])]
 public partial class SettingsApplicatorSoPatch : IDisposable
 {

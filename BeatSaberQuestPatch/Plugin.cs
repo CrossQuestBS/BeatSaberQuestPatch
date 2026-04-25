@@ -21,9 +21,11 @@ public class Plugin
     public Plugin(Logger logger, Config config)
     {
         log = logger;
+        
+        // PluginConfigImpl is a C# Source Generated class
         PluginConfig.Instance = config.Generated<PluginConfigImpl>();
-        log.Notice($"Was able to do stuff!: {PluginConfig.Instance.Example}");
-        log.Notice($"Basic plugin running with config value");
+        
+        // This initializes all patches and enables them
         _patches = [
             new DisableEditorButton(),
             new DisableOnNonQuestPatch(),

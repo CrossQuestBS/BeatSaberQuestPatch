@@ -5,6 +5,9 @@ using Accord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches;
 
+/// <summary>
+/// This patch here to use correct Graphic Settings for Quest
+/// </summary>
 [AccordPatch(typeof(MainSettingsMenuViewControllersInstaller), "InstallBindings", [])]
 [AccordPrefix]
 public partial class MainSettingsMenuViewControllersInstallerPatch : IDisposable

@@ -1,10 +1,13 @@
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using Accord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches;
 
+
+/// <summary>
+/// Update the path where customs songs should be loaded from
+/// TODO: Integrate into SongCore
+/// </summary>
 [AccordPatch(typeof(FileSystemCustomLevelProvider), ".ctor", [])]
 [AccordPostfix]
 public partial class PatchCustomSongs

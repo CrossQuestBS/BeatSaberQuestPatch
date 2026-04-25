@@ -2,6 +2,11 @@ using Accord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches;
 
+
+/// <summary>
+/// This enables official CustomSongs implementation which is normally not available in Quest code
+/// TODO: Move this to SongCore
+/// </summary>
 [AccordPatch(typeof(SinglePlayerLevelSelectionFlowCoordinator), 
     "get_enableCustomLevels", [])]
 [AccordPrefix]

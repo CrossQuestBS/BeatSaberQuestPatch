@@ -5,6 +5,9 @@ using Accord.Common.Attributes;
 
 namespace BeatSaberQuestPatch.Patches
 {
+    /// <summary>
+    /// This patch implements back the code to get which Quest headset is the game running on
+    /// </summary>
     [AccordPatch(typeof(HardwareCategories), "GetHardwareCategory", [])]
     [AccordPrefix]
     public partial class HardwareCategoriesPatch : IDisposable
