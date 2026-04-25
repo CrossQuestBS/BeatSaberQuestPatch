@@ -55,24 +55,6 @@ public partial class MainEffectPatch
     }
 }
 
-[AccordPatch(typeof(PlatformUser), "InternalGetAccessTokenAsync", [])]
-[AccordPrefix]
-public partial class StopTryingGettingToken
-{
-    public StopTryingGettingToken()
-    {
-        Patch();
-    }
-
-    public bool Prefix(PlatformUser instance, ref Task returnValue)
-    {
-        returnValue = Task.CompletedTask;
-        return false;
-    }
-}
-
-
-
 [AccordPatch(typeof(SettingValidations), "AdjustQuest3", [typeof(Settings)])]
 public partial class SettingsPatch
 {
@@ -98,6 +80,5 @@ public partial class SettingsPatch
         ref QuestSettings quest = ref arg1.quest;
         quest.foveatedRenderingGameplay = QuestSettings.FoveatedRenderingLevel.Medium;
         quest.dynamicFoveatedRendering = true;
-
     }
 }
