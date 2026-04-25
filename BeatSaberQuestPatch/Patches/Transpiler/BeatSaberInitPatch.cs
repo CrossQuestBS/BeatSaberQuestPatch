@@ -1,9 +1,9 @@
 using Accord.Common.Attributes;
 
-namespace BeatSaberQuestPatch.Patches.Trampoline;
+namespace BeatSaberQuestPatch.Patches.Transpiler;
 
 [AccordTranspiler]
-public partial class BeatSaberInitTranspilerInstance 
+public partial class BeatSaberInitPatch 
 {
     public SettingsApplicatorSO PatchApplicator(BeatSaberInit instance)
     {

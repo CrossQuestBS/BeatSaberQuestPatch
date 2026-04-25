@@ -1,6 +1,6 @@
 using System;
 using BeatSaberQuestPatch.Patches;
-using BeatSaberQuestPatch.Patches.Trampoline;
+using BeatSaberQuestPatch.Patches.Transpiler;
 using Accord.Common.Interfaces;
 using IPA;
 using IPA.Config;
@@ -40,7 +40,7 @@ public class Plugin
             new MainEffectPatch()
         ];
 
-        BeatSaberInitTranspilerInstance.Instance = new BeatSaberInitTranspilerInstance();
+        BeatSaberInitPatch.Instance = new BeatSaberInitPatch();
     }
 
     [OnStart]

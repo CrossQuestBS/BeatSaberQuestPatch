@@ -4,13 +4,13 @@ using System.Linq;
 using Accord.Transpiler.Attributes;
 using AsmResolver.DotNet;
 using AsmResolver.PE.DotNet.Cil;
-using BeatSaberQuestPatch.Patches.Trampoline;
 using Accord.Transpiler.Interfaces;
+using BeatSaberQuestPatch.Patches.Transpiler;
 
 namespace BeatSaberQuestPatch.Build;
 
-[AccordTranspiler(typeof(BeatSaberInit), "get_settingsApplicator", [], typeof(BeatSaberInitTranspilerInstance))]
-public class BeatSaberInitTrampolineBuild : IAccordTranspilerInstance
+[AccordTranspiler(typeof(BeatSaberInit), "get_settingsApplicator", [], typeof(BeatSaberInitPatch))]
+public class BeatSaberInitTranspilerInstance : IAccordTranspilerInstance
 {
     public IAccordTranspiler[] TranspilerList { get; } = [new ReplaceSettingsApplicator()];
 
@@ -27,7 +27,7 @@ public class BeatSaberInitTrampolineBuild : IAccordTranspilerInstance
         {
             yield return new CilInstruction(CilOpCodes.Call, getInstance);
             yield return new CilInstruction(CilOpCodes.Ldarg_0);
-            yield return new CilInstruction(CilOpCodes.Call, importer.ImportMethod(definition.Methods.FirstOrDefault(it => it.Name == nameof(BeatSaberInitTranspilerInstance.PatchApplicator))));
+            yield return new CilInstruction(CilOpCodes.Call, importer.ImportMethod(definition.Methods.FirstOrDefault(it => it.Name == nameof(BeatSaberInitPatch.PatchApplicator))));
         }
     }
 
