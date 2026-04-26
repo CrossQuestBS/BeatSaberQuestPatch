@@ -7,44 +7,44 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="Accord">
-        <HintPath>..\Dependencies\Accord.dll</HintPath>
-      </Reference>
-      <Reference Include="Accord.Common">
-        <HintPath>..\Dependencies\Accord.Common.dll</HintPath>
-      </Reference>
-      <Analyzer Include="..\Dependencies\Generator\Accord.Generator.dll" />
-      <Reference Include="IPA.Loader">
-        <HintPath>..\Dependencies\IPA.Loader.dll</HintPath>
-      </Reference>
-        <Analyzer Include="..\Dependencies\Generator\IPA.Config.Generator.dll" />
-        <Reference Include="Main" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll" Publicize="true" />
+        <Reference Include="Accord">
+            <HintPath>..\Dependencies\Accord.dll</HintPath>
+        </Reference>
+        <Reference Include="Accord.Common">
+            <HintPath>..\Dependencies\Accord.Common.dll</HintPath>
+        </Reference>
+        <Analyzer Include="..\Dependencies\Generator\Accord.Generator.dll"/>
+        <Reference Include="IPA.Loader">
+            <HintPath>..\Dependencies\IPA.Loader.dll</HintPath>
+        </Reference>
+        <Analyzer Include="..\Dependencies\Generator\IPA.Config.Generator.dll"/>
+        <Reference Include="Main" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll" Publicize="true"/>
         <Reference Include="BeatSaber.GameSettings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.GameSettings.dll"/>
         <Reference Include="OculusStudios.Platform.Core" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\OculusStudios.Platform.Core.dll"/>
-        <Reference Include="OculusStudios.Platform.Oculus" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\OculusStudios.Platform.Oculus.dll"  Publicize="true"/>
-      <Reference Include="BGLib.FileStorage" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.FileStorage.dll"/>
+        <Reference Include="OculusStudios.Platform.Oculus" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\OculusStudios.Platform.Oculus.dll" Publicize="true"/>
+        <Reference Include="BGLib.FileStorage" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.FileStorage.dll"/>
         <Reference Include="BGLib.UnityExtension" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BGLib.UnityExtension.dll"/>
         <Reference Include="GameInit" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameInit.dll" Publicize="true"/>
-      <Reference Include="BeatSaber.Settings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.Settings.dll"/>
-      <Reference Include="Rendering" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Rendering.dll" Publicize="true"/>
-      <Reference Include="GameplayCore" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameplayCore.dll" Publicize="true"/>
+        <Reference Include="BeatSaber.Settings" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\BeatSaber.Settings.dll"/>
+        <Reference Include="Rendering" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Rendering.dll" Publicize="true"/>
+        <Reference Include="GameplayCore" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\GameplayCore.dll" Publicize="true"/>
         <Reference Include="DataModels" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\DataModels.dll" Publicize="true"/>
         <Reference Include="Helpers" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Helpers.dll" Publicize="true"/>
-      <Reference Include="Oculus.Platform" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Oculus.Platform.dll"/>
-      <Reference Include="Oculus.VR" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Oculus.VR.dll"/>
-      <Reference Include="UnityEngine.UI" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.UI.dll" />
-      <Reference Include="UnityEngine.CoreModule" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.CoreModule.dll" />
+        <Reference Include="Oculus.Platform" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Oculus.Platform.dll"/>
+        <Reference Include="Oculus.VR" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\Oculus.VR.dll"/>
+        <Reference Include="UnityEngine.UI" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.UI.dll"/>
+        <Reference Include="UnityEngine.CoreModule" HintPath="$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.CoreModule.dll"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.2">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.2">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="manifest.json" />
+        <EmbeddedResource Include="manifest.json"/>
     </ItemGroup>
 
 
