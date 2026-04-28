@@ -34,12 +34,7 @@ public class Plugin
             new MainSettingsMenuViewControllersInstallerPatch(),
             new SettingsApplicatorSoPatch(),
             new QuestGraphicSettingsViewControllerPatch(),
-            new EnableCustomSongsPatch(),
-            new PatchCustomSongs(),
-            new SettingsPatch(),
             new StopTryingGettingToken(),
-            new GraphicsPatch(),
-            new MainEffectPatch()
         ];
 
         BeatSaberInitPatch.Instance = new BeatSaberInitPatch();

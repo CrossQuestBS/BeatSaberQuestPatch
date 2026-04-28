@@ -5,7 +5,6 @@ namespace BeatSaberQuestPatch.Patches;
 
 /// <summary>
 /// This enables the 120hz graphic settings
-/// TODO: Add a check for non Quest 3 devices
 /// </summary>
 [AccordPatch(typeof(QuestGraphicSettingsViewController), "ShouldShowStinsonEntries", [])]
 public partial class QuestGraphicSettingsViewControllerPatch : IDisposable
@@ -17,7 +16,8 @@ public partial class QuestGraphicSettingsViewControllerPatch : IDisposable
 
     public void Postfix(ref bool returnValue)
     {
-        returnValue = true;
+        var hardwareCategory = HardwareCategories.GetHardwareCategory();
+        returnValue = hardwareCategory is HardwareCategory.Quest3 or HardwareCategory.QuestPro;
     }
 
     public void Dispose()
