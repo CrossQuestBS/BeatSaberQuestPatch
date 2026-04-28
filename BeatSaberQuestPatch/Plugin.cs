@@ -36,10 +36,8 @@ public class Plugin
             new QuestGraphicSettingsViewControllerPatch(),
             new EnableCustomSongsPatch(),
             new PatchCustomSongs(),
-            new SettingsPatch(),
+            //new SettingsPatch(),
             new StopTryingGettingToken(),
-            new GraphicsPatch(),
-            new MainEffectPatch()
         ];
 
         BeatSaberInitPatch.Instance = new BeatSaberInitPatch();

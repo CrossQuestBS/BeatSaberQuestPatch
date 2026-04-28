@@ -20,10 +20,10 @@ public partial class SettingsApplicatorSoPatch : IDisposable
     
     public void Postfix(SettingsApplicatorSO instance, ref Settings settings, ref SceneType arg2)
     {
-        OVRPlugin.suggestedCpuPerfLevel = (OVRPlugin.ProcessorPerformanceLevel)SettingPresets.kQuest3.quest.cpuLevel - 1;
-        OVRPlugin.suggestedGpuPerfLevel = (OVRPlugin.ProcessorPerformanceLevel)SettingPresets.kQuest3.quest.gpuLevel - 1;
-        OVRPlugin.systemDisplayFrequency = 120;
-        Screen.SetResolution(16, 16, FullScreenMode.FullScreenWindow, new RefreshRate() { numerator = 120, denominator = 1});
+        OVRPlugin.suggestedCpuPerfLevel = (OVRPlugin.ProcessorPerformanceLevel)settings.quest.cpuLevel - 1;
+        OVRPlugin.suggestedGpuPerfLevel = (OVRPlugin.ProcessorPerformanceLevel)settings.quest.gpuLevel - 1;
+        OVRPlugin.systemDisplayFrequency = settings.quality.targetFramerate;
+        Screen.SetResolution(16, 16, FullScreenMode.FullScreenWindow, new RefreshRate() { numerator = (uint)settings.quality.targetFramerate, denominator = 1});
     }
 
     public void Dispose()
